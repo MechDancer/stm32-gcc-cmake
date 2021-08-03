@@ -6,10 +6,6 @@ project(stm32_test CXX C ASM)
 set(STM32_CUBE_F1_PATH STM32CubeF1)
 find_package(CMSIS COMPONENTS STM32F103C8 REQUIRED)
 
-set(PROJECT_SOURCES
-    main.c
-)
-
-add_executable(stm32_test ${PROJECT_SOURCES})
+add_executable(stm32_test main.cpp)
 target_link_libraries(stm32_test CMSIS::STM32::F103C8 STM32::NoSys)
 stm32_print_size_of_target(stm32_test)
