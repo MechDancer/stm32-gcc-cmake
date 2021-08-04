@@ -1,3 +1,5 @@
+#include "src/library.h"
+
 int main(void) {
     for (;;)
         ;

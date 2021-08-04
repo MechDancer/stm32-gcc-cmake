@@ -1,4 +1,4 @@
-﻿.PHONY : build
+﻿.PHONY : build # 按 release 构建
 build:
 	mkdir -p build/release
 	cd build/release \
@@ -6,7 +6,7 @@ build:
 	   ../.. \
 	&& make -j2
 
-.PHONY : build-debug
+.PHONY : build-debug # 按 debug 构建
 debug:
 	mkdir -p build/debug
 	cd build/debug \
@@ -14,6 +14,6 @@ debug:
 	   ../.. \
 	&& make -j2
 
-.PHONY : clean
+.PHONY : clean # 删除构建目录
 clean:
 	rm -rf build

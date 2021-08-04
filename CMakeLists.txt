@@ -10,10 +10,16 @@ set(STM32_CUBE_F1_PATH STM32CubeF1)
 find_package(CMSIS COMPONENTS STM32F103C8 REQUIRED)
 find_package(HAL COMPONENTS STM32F1 LL_RCC LL_GPIO REQUIRED)
 
-add_executable(stm32_test main.cpp)
+add_library(stm32_test
+    src/library.h
+    src/library.c
+    src/library.cpp)
 target_link_libraries(stm32_test
     HAL::STM32::F1::LL_RCC
     HAL::STM32::F1::LL_GPIO
     CMSIS::STM32::F103C8
     STM32::NoSys)
-stm32_print_size_of_target(stm32_test)
+
+add_executable(stm32_test_app app/main.cpp)
+target_link_libraries(stm32_test_app stm32_test)
+stm32_print_size_of_target(stm32_test_app)

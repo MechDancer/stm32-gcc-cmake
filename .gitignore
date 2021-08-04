@@ -1,6 +1,4 @@
-/cmake-build-**/
-/build/
-/out/
+build/
+cmake-build-**/
 
-/.*/
-*.json
+.*/
